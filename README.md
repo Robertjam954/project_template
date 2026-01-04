@@ -32,43 +32,39 @@ This command creates a copy of `.env.example` and names it `.env`, allowing you 
 ## Project Organization
 
 ```
-├── LICENSE            <- Open-source license if one is chosen
-├── README.md          <- The top-level README for developers using this project
+├── LICENSE                        <- Open-source license if one is chosen
+├── README.md                      <- The top-level README for developers using this project
 ├── data
-│   ├── external       <- Data from third party sources
-│   ├── interim        <- Intermediate data that has been transformed
-│   ├── processed      <- The final, canonical data sets for modeling
-│   └── raw            <- The original, immutable data dump
+│   ├── external                   <- Data from third party sources
+│   ├── interim                    <- Intermediate data that has been transformed
+│   ├── processed                  <- The final, canonical data sets for modeling
+│   └── raw                        <- The original, immutable data dump
 │
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-└── src                         <- Source code for this project
+├── notebooks/                     <- Jupyter notebooks for exploration and prototyping
+├── references/                    <- Data dictionaries, manuals, and other explanatory materials
+├── src/                           <- Source code for this project
     │
-    ├── __init__.py             <- Makes src a Python module
+    ├── data collection and processing/   <- Data collection, cleaning, and processing code
+    │   ├── collection                      <- Gather data from databases, APIs, web scraping, and other sources
+    │   │   (Collection: gather data from various sources like databases, APIs, or web scraping.)
+    │   └── cleaning                        <- Cleaning & processing routines
+    │       (Cleaning & Processing: encode variables, handle missing values, remove duplicates, transform data, and prepare it for analysis.)
     │
-    ├── config.py               <- Store useful variables and configuration
+    ├── data reports/                <- Generated analysis outputs and exportable tables (reports: HTML/PDF/LaTeX/etc.; tables: CSV/TSV/Excel)
+    │   ├── reports                  <- Rendered analysis outputs (HTML, PDF, LaTeX, etc.)
+    │   └── tables                   <- CSV/TSV/Excel tables and summary tables used for manuscripts/reports
     │
-    ├── dataset.py              <- Scripts to download or generate data
+    ├── exploratory data analysis/   <- EDA: use statistics and visualizations to understand data patterns and relationships
+    │   (Exploratory Data Analysis (EDA): use statistics and visualizations to understand data patterns and relationships.)
     │
-    ├── features.py             <- Code to create features for modeling
+    ├── modeling/                    <- Choose, train, and evaluate both associational (statistical) and predictive (machine learning) models
+    │   ├── train.py                  <- Code/scripts to train models
+    │   ├── predict.py                <- Code to run model inference with trained models
+    │   └── evaluation.md             <- Notes or scripts for evaluating model performance and reporting results
+    │   (Modeling: Includes associational/statistical analyses to estimate relationships (effect estimates, confidence intervals, model diagnostics) AND predictive/ML models to forecast or classify. Evaluate predictive models using metrics like precision, recall, and F1-score; report associational results using appropriate statistical summaries and diagnostics.)
     │
-    │    
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    ├── plots.py                <- Code to create visualizations 
-    │
-    └── services                <- Service classes to connect with external platforms, tools, or APIs
-        └── __init__.py 
+    ...existing code...
+    └── services/                    <- Service classes to connect with external platforms, tools, or APIs
+        └── __init__.py
+└── manuscript components/         <- Manuscript drafts, figures, and text components for papers
 ```
